@@ -37,8 +37,6 @@ const LandingSection = () => {
       email: Yup.string()
         .email('Invalid email address')
         .required('Required'),
-      type: Yup.string()
-        .required('Required'),
       comment: Yup.string()
         .min(25, "Must be 25 characters Minimum")
         .required('Required'),
@@ -89,12 +87,10 @@ const LandingSection = () => {
               </FormControl>
               <FormControl>
                 <FormLabel htmlFor="type">Type of enquiry</FormLabel>
-                <Select id="type" name="type">
-                  <option value="hireMe">Freelance project proposal</option>
-                  <option value="openSource">
-                    Open source consultancy session
-                  </option>
-                  <option value="other">Other</option>
+                <Select id="type" name="type" colorScheme="purple">
+                  <option value="hireMe" style={{ color: "black" }}>Freelance project proposal</option>
+                  <option value="openSource" style={{ color: "black" }}>Open source consultancy session</option>
+                  <option value="other" style={{ color: "black" }}>Other</option>
                 </Select>
               </FormControl>
               <FormControl isInvalid={formik.errors.comment && formik.touched.comment ? true : false}>
